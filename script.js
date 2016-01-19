@@ -11,7 +11,7 @@ function clickHandler(e) {
         // add bookmark on "Other bookmarks"
         chrome.bookmarks.create({
           'parentId': item.parentId,
-          'title': 'TITLE',
+          'title': tab.title,
           'url': tab.url
         });
 
