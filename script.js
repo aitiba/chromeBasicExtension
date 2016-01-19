@@ -1,26 +1,30 @@
 function clickHandler(e) {
   // window.open(this.href);
+
   var url = this.href;
 
-  chrome.bookmarks.getTree(function(itemTree) {
-    itemTree.forEach(function(item){
-      // add bookmark on "Other bookmarks"
-      chrome.bookmarks.create({
-        'parentId': item.parentId,
-        'title': 'TITLE',
-        'url': url
-      });
+  //to get the actual window url
+  chrome.tabs.getSelected(null,function(tab) {
+    // getTree to can create new bookmarks or folders
+    chrome.bookmarks.getTree(function(itemTree) {
+      itemTree.forEach(function(item){
+        // add bookmark on "Other bookmarks"
+        chrome.bookmarks.create({
+          'parentId': item.parentId,
+          'title': 'TITLE',
+          'url': tab.url
+        });
 
-      // add folder on "Other bookmarks"
-      /* chrome.bookmarks.create({
-        'parentId': item.patentId,
-        'title': 'Extension bookmarks'},
-        function(newFolder) {
-          alert("added folder: " + newFolder.title);
-        }); */
+        // add folder on "Other bookmarks"
+        /* chrome.bookmarks.create({
+          'parentId': item.patentId,
+          'title': 'Extension bookmarks'},
+          function(newFolder) {
+            alert("added folder: " + newFolder.title);
+          }); */
+      });
     });
   });
-
 }
 
 // Add event listeners once the DOM has fully loaded by listening for the
