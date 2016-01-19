@@ -14,9 +14,6 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "activeTab",
-    "http://www.forosdelweb.com/",
-    "http://www.aitoribanez.com/"
-
+    "bookmarks"
   ]
 }
