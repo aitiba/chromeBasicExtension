@@ -1,19 +1,22 @@
 {
-  "name": "Example for a basic Chrome extension",
+  "name": "Example for a basic chrome extension",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "Example to learn developing a Chrome extension.",
+  "description": "Example to learn developing a chrome extension.",
   "icons": {
      "16": "icon16.png",
      "48": "icon48.png",
      "128": "icon128.png"
             },
   "browser_action": {
-    "default_title": "Example app",
+    "default_title": "ADIBIDEA a",
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
   "permissions": [
-    "http://www.forosdelweb.com/"
+    "activeTab",
+    "http://www.forosdelweb.com/",
+    "http://www.aitoribanez.com/"
+
   ]
 }
